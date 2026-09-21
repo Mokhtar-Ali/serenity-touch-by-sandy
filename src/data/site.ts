@@ -22,18 +22,10 @@ export const site = {
     footerCta:
       "https://cleopatrasolutions.com/?utm_source=serenity_touch&utm_medium=footer_cta&utm_campaign=website_design&utm_content=website_like_this",
   },
-  aliTravelFrames: {
-    url: "https://alitravelframes.com/",
-    imageHref:
-      "https://alitravelframes.com/?utm_source=serenity_touch&utm_medium=sticky_ad&utm_campaign=ali_travel_frames&utm_content=beach_image",
-    ctaHref:
-      "https://alitravelframes.com/?utm_source=serenity_touch&utm_medium=sticky_ad&utm_campaign=ali_travel_frames&utm_content=explore_trips_button",
-  },
   images: {
     logo: "/images/serenity-touch-logo.png",
     hero: "/images/mobile-massage-setup.jpg",
     sandy: "/images/sandy-serenity-touch.jpg",
-    travel: "/images/ali-travel-frames-beach.jpeg",
   },
   navigation: [
     { label: "About", href: "#about" },

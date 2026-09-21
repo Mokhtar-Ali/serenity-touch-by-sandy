@@ -18,7 +18,7 @@ export function Navbar() {
 
   useEffect(() => {
     const updateScrollState = () => {
-      setScrolled(window.scrollY > 18);
+      setScrolled(window.scrollY > 40);
     };
 
     updateScrollState();
@@ -67,9 +67,9 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition duration-300",
+        "fixed left-1/2 top-0 z-50 w-full -translate-x-1/2 transition-[width,max-width,padding,border-radius,background-color,box-shadow,border-color] duration-[350ms] ease-out",
         scrolled
-          ? "border-b border-sage-700/12 bg-cream-100/92 shadow-[0_14px_34px_rgba(73,85,63,0.1)] backdrop-blur-xl"
+          ? "border-b border-sage-700/12 bg-cream-100/92 shadow-[0_14px_34px_rgba(73,85,63,0.1)] backdrop-blur-xl xl:w-[max(60%,48rem)] xl:rounded-b-2xl"
           : "bg-cream-100/70 backdrop-blur-md",
       )}
     >
@@ -90,8 +90,8 @@ export function Navbar() {
             height={1024}
             loading="eager"
             fetchPriority="high"
-            sizes="(max-width: 768px) 132px, 168px"
-            className="h-14 w-auto object-contain"
+            sizes="128px"
+            className="h-auto w-32 object-contain"
           />
         </a>
 

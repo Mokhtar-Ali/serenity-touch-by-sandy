@@ -4,7 +4,6 @@ import { AboutSection } from "@/components/sections/about";
 import { ContactSection } from "@/components/sections/contact";
 import { HeroSection } from "@/components/sections/hero";
 import { ServicesSection } from "@/components/sections/services";
-import { StickyPromotion } from "@/components/sticky-promotion";
 import { addOns, services } from "@/data/services";
 import { site } from "@/data/site";
 
@@ -83,7 +82,6 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
-      <StickyPromotion />
     </>
   );
 }
