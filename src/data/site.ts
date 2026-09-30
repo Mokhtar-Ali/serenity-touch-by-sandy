@@ -22,8 +22,10 @@ export const site = {
     "https://www.instagram.com/serenitytouchbysandy?igsh=Yzl3ZGlqaHlidmI5",
   cleopatra: {
     url: "https://cleopatrasolutions.com/",
-    footerCta:
-      "https://cleopatrasolutions.com/?utm_source=serenity_touch&utm_medium=footer_cta&utm_campaign=website_design&utm_content=website_like_this",
+    auditCta:
+      "https://cleopatrasolutions.com/?utm_source=serenity_touch&utm_medium=footer_cta&utm_campaign=website_design&utm_content=free_audit",
+    websiteCta:
+      "https://cleopatrasolutions.com/?utm_source=serenity_touch&utm_medium=footer_cta&utm_campaign=website_design&utm_content=create_website",
   },
   images: {
     logo: `${imageBucket}/Logo1.jpg`,

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight, Camera, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Camera, MapPin, Phone } from "lucide-react";
 
 import { ButtonLink } from "@/components/ui/button";
 import { site } from "@/data/site";
@@ -76,33 +76,44 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="grid gap-6 border-b border-sage-700/14 py-8 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div className="grid gap-6 border-b border-sage-700/14 py-8 lg:grid-cols-[1fr_0.95fr] lg:items-center">
           <div>
-            <p className="font-display text-xl italic text-sage-600">
-              Website by Cleopatra Solutions
+            <p className="text-sm font-semibold text-sage-700">
+              WEBSITE BY CLEOPATRA SOLUTIONS
             </p>
-            <h3 className="mt-2 font-display text-3xl font-semibold leading-none text-sage-950">
-              Want a website that feels this calm and professional?
+            <h3 className="mt-2 max-w-xl font-display text-3xl font-semibold leading-tight text-sage-950">
+              Want a website like this for your business?
             </h3>
             <p className="mt-3 max-w-2xl leading-7 text-sage-900/72">
-              We create elegant, mobile-friendly websites that help service
-              businesses present their work, build trust, and attract more
-              clients.
+              Whether you have a site or not, we help with bookings, payments,
+              portals, CRM and automation.
             </p>
           </div>
-          <div className="grid gap-3">
-            <ButtonLink
-              href={site.cleopatra.footerCta}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="secondary"
-            >
-              Build My Website
-              <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
-            </ButtonLink>
-            <span className="text-center text-xs text-sage-900/54">
-              Websites, automation, digital content
-            </span>
+          <div className="grid gap-4">
+            <p className="text-sm font-medium leading-6 text-sage-900/72">
+              Websites · Portals · Bookings · Payments · CRM · Audit
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <ButtonLink
+                href={site.cleopatra.auditCta}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-[linear-gradient(135deg,#d9bd72_0%,#bd9140_100%)] px-4 text-sage-950 shadow-[0_14px_28px_rgba(146,104,34,0.2)] hover:brightness-105 focus-visible:outline-[#8a6729]"
+              >
+                Get your free audit
+                <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" />
+              </ButtonLink>
+              <ButtonLink
+                href={site.cleopatra.websiteCta}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="ghost"
+                className="w-full border border-[#ae873d] px-4 text-sage-950 hover:bg-[#bd9140]/10 focus-visible:outline-[#8a6729]"
+              >
+                Create your website
+                <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" />
+              </ButtonLink>
+            </div>
           </div>
         </div>
 
