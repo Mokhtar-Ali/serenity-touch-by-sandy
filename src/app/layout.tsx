@@ -1,76 +1,72 @@
-import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
+import type { Metadata, Viewport } from 'next';
+import localFont from 'next/font/local';
 
-import { site } from "@/data/site";
-import "./globals.css";
+import { site } from '@/data/site';
+import './globals.css';
 
 const manrope = localFont({
-  src: "./fonts/manrope-latin.woff2",
-  variable: "--font-manrope",
-  weight: "200 800",
-  display: "swap",
+  src: './fonts/manrope-latin.woff2',
+  variable: '--font-manrope',
+  weight: '200 800',
+  display: 'swap',
 });
 
 const cormorant = localFont({
-  variable: "--font-cormorant",
+  variable: '--font-cormorant',
   src: [
     {
-      path: "./fonts/cormorant-garamond-latin.woff2",
-      weight: "500 700",
-      style: "normal",
+      path: './fonts/cormorant-garamond-latin.woff2',
+      weight: '500 700',
+      style: 'normal',
     },
     {
-      path: "./fonts/cormorant-garamond-italic-latin.woff2",
-      weight: "500 700",
-      style: "italic",
+      path: './fonts/cormorant-garamond-italic-latin.woff2',
+      weight: '500 700',
+      style: 'italic',
     },
   ],
-  display: "swap",
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Serenity Touch by Sandy | Mobile Massage in Florence, KY",
-    template: "%s | Serenity Touch by Sandy",
+    default: 'Serenity Touch by Sandy | Mobile Massage in Florence, KY',
+    template: '%s | Serenity Touch by Sandy',
   },
   description:
-    "Serenity Touch by Sandy provides personalized at-home massage in Florence, Kentucky, including relaxation, Swedish, deep tissue, neck and shoulder massage, foot reflexology, and add-ons.",
+    'Serenity Touch by Sandy provides personalized at-home massage in Florence, Kentucky, including relaxation, Swedish, deep tissue, neck and shoulder massage, foot reflexology, and add-ons.',
   alternates: {
-    canonical: "/",
+    canonical: '/',
   },
-  category: "Health and wellness",
+  category: 'Health and wellness',
   openGraph: {
-    title: "Serenity Touch by Sandy | Mobile Massage in Florence, KY",
+    title: 'Serenity Touch by Sandy | Mobile Massage in Florence, KY',
     description:
-      "Spa experience in the comfort of your home with personalized massage care by Sandy in Florence, Kentucky.",
+      'Spa experience in the comfort of your home with personalized massage care by Sandy in Florence, Kentucky.',
     url: site.url,
     siteName: site.name,
-    type: "website",
-    locale: "en_US",
+    type: 'website',
+    locale: 'en_US',
     images: [
       {
         url: site.images.hero,
-        alt: "Massage table prepared with stones, towels, and massage oil for a mobile massage session.",
+        alt: 'Massage table prepared with stones, towels, and massage oil for a mobile massage session.',
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Serenity Touch by Sandy | Mobile Massage in Florence, KY",
+    card: 'summary_large_image',
+    title: 'Serenity Touch by Sandy | Mobile Massage in Florence, KY',
     description:
-      "Personalized at-home massage care for relaxation, tension relief, and restorative wellness in Florence, Kentucky.",
+      'Personalized at-home massage care for relaxation, tension relief, and restorative wellness in Florence, Kentucky.',
     images: [site.images.hero],
-  },
-  icons: {
-    icon: site.images.icon,
-    apple: site.images.icon,
   },
 };
 
 export const viewport: Viewport = {
-  colorScheme: "light",
-  themeColor: "#f5f1e8",
+  colorScheme: 'light',
+  themeColor: '#f5f1e8',
 };
 
 export default function RootLayout({

@@ -1,24 +1,24 @@
-import Image from "next/image";
-import { HandHeart, Leaf, Sparkles } from "lucide-react";
+import Image from 'next/image';
+import { HandHeart, Leaf, Sparkles } from 'lucide-react';
 
-import { Reveal } from "@/components/ui/reveal";
-import { SectionHeading } from "@/components/ui/section-heading";
-import { site } from "@/data/site";
+import { Reveal } from '@/components/ui/reveal';
+import { SectionHeading } from '@/components/ui/section-heading';
+import { site } from '@/data/site';
 
 const highlights = [
   {
-    title: "Mobile Massage Care",
-    text: "Professional massage services brought to the comfort of your home.",
+    title: 'Mobile Massage Care',
+    text: 'Professional massage services brought to the comfort of your home.',
     icon: HandHeart,
   },
   {
-    title: "Personalized Experience",
-    text: "Each session is tailored to help you relax, recharge, and feel renewed.",
+    title: 'Personalized Experience',
+    text: 'Each session is tailored to help you relax, recharge, and feel renewed.',
     icon: Sparkles,
   },
   {
-    title: "Natural Wellness Focus",
-    text: "A calm, restorative approach centered on comfort, balance, and care.",
+    title: 'Natural Wellness Focus',
+    text: 'A calm, restorative approach centered on comfort, balance, and care.',
     icon: Leaf,
   },
 ] as const;

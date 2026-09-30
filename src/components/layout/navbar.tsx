@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import { Menu, MessageCircle, X } from "lucide-react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import { Menu, MessageCircle, X } from 'lucide-react';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 
-import { ButtonLink } from "@/components/ui/button";
-import { site } from "@/data/site";
-import { cn } from "@/lib/utils";
+import { ButtonLink } from '@/components/ui/button';
+import { site } from '@/data/site';
+import { cn } from '@/lib/utils';
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -22,9 +22,9 @@ export function Navbar() {
     };
 
     updateScrollState();
-    window.addEventListener("scroll", updateScrollState, { passive: true });
+    window.addEventListener('scroll', updateScrollState, { passive: true });
 
-    return () => window.removeEventListener("scroll", updateScrollState);
+    return () => window.removeEventListener('scroll', updateScrollState);
   }, []);
 
   useEffect(() => {
@@ -34,28 +34,30 @@ export function Navbar() {
 
     const previousOverflow = document.body.style.overflow;
     const previouslyFocused =
-      document.activeElement instanceof HTMLElement ? document.activeElement : null;
+      document.activeElement instanceof HTMLElement
+        ? document.activeElement
+        : null;
     const menuButton = menuButtonRef.current;
     const focusTimer = window.setTimeout(() => {
       const firstFocusable = mobilePanelRef.current?.querySelector<HTMLElement>(
-        "a[href], button:not([disabled])",
+        'a[href], button:not([disabled])'
       );
 
       firstFocusable?.focus();
     }, 0);
     const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
+      if (event.key === 'Escape') {
         setOpen(false);
       }
     };
 
-    document.body.style.overflow = "hidden";
-    document.addEventListener("keydown", closeOnEscape);
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', closeOnEscape);
 
     return () => {
       window.clearTimeout(focusTimer);
       document.body.style.overflow = previousOverflow;
-      document.removeEventListener("keydown", closeOnEscape);
+      document.removeEventListener('keydown', closeOnEscape);
       if (previouslyFocused && previouslyFocused !== document.body) {
         previouslyFocused.focus();
       } else {
@@ -67,10 +69,10 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed left-1/2 top-0 z-50 w-full -translate-x-1/2 transition-[width,max-width,padding,border-radius,background-color,box-shadow,border-color] duration-[350ms] ease-out",
+        'fixed left-1/2 top-0 z-50 w-full -translate-x-1/2 transition-[width,max-width,padding,border-radius,background-color,box-shadow,border-color] duration-[350ms] ease-out',
         scrolled
-          ? "border-b border-sage-700/12 bg-cream-100/92 shadow-[0_14px_34px_rgba(73,85,63,0.1)] backdrop-blur-xl xl:w-[max(60%,48rem)] xl:rounded-b-2xl"
-          : "bg-cream-100/70 backdrop-blur-md",
+          ? 'border-b border-sage-700/12 bg-cream-100/92 shadow-[0_14px_34px_rgba(73,85,63,0.1)] backdrop-blur-xl xl:w-[max(60%,48rem)] xl:rounded-b-2xl'
+          : 'bg-cream-100/70 backdrop-blur-md'
       )}
     >
       <nav
@@ -80,18 +82,17 @@ export function Navbar() {
         <a
           href="#home"
           aria-label="Serenity Touch by Sandy home"
-          className="inline-flex min-h-12 min-w-12 items-center rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sage-700"
+          className="relative inline-flex h-16 w-36 items-center overflow-hidden rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sage-700"
           onClick={() => setOpen(false)}
         >
           <Image
             src={site.images.logo}
             alt="Serenity Touch by Sandy logo"
-            width={1536}
-            height={1024}
+            fill
             loading="eager"
             fetchPriority="high"
-            sizes="128px"
-            className="h-auto w-32 object-contain"
+            sizes="144px"
+            className="object-cover"
           />
         </a>
 
@@ -117,7 +118,7 @@ export function Navbar() {
           type="button"
           aria-expanded={open}
           aria-controls="mobile-navigation"
-          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
           className="ml-auto inline-flex h-12 w-12 items-center justify-center rounded-full border border-sage-700/20 bg-white/52 text-sage-900 shadow-[0_12px_24px_rgba(73,85,63,0.08)] transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sage-700 md:hidden"
           onClick={() => setOpen((current) => !current)}
         >
@@ -138,7 +139,7 @@ export function Navbar() {
             initial={reduceMotion ? false : { opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -8 }}
-            transition={{ duration: reduceMotion ? 0 : 0.22, ease: "easeOut" }}
+            transition={{ duration: reduceMotion ? 0 : 0.22, ease: 'easeOut' }}
           >
             <div className="mx-auto grid max-w-7xl gap-2">
               {site.navigation.map((item) => (
@@ -152,7 +153,11 @@ export function Navbar() {
                 </a>
               ))}
 
-              <ButtonLink className="mt-2 w-full" href={site.smsHref} onClick={() => setOpen(false)}>
+              <ButtonLink
+                className="mt-2 w-full"
+                href={site.smsHref}
+                onClick={() => setOpen(false)}
+              >
                 <MessageCircle aria-hidden="true" className="h-4 w-4" />
                 Make an Appointment
               </ButtonLink>

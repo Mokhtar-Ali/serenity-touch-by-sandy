@@ -1,14 +1,17 @@
-import Image from "next/image";
-import { ArrowRight, Camera, MapPin, Phone } from "lucide-react";
+import Image from 'next/image';
+import { ArrowRight, Camera, MapPin, Phone } from 'lucide-react';
 
-import { ButtonLink } from "@/components/ui/button";
-import { site } from "@/data/site";
+import { ButtonLink } from '@/components/ui/button';
+import { site } from '@/data/site';
 
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-cream-200 text-sage-900" aria-labelledby="footer-title">
+    <footer
+      className="bg-cream-200 text-sage-900"
+      aria-labelledby="footer-title"
+    >
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <h2 id="footer-title" className="sr-only">
           Serenity Touch by Sandy footer
@@ -16,14 +19,15 @@ export function Footer() {
 
         <div className="grid gap-10 border-b border-sage-700/14 pb-10 lg:grid-cols-[1.2fr_0.7fr_0.9fr]">
           <div>
-            <Image
-              src={site.images.logo}
-              alt="Serenity Touch by Sandy logo"
-              width={1536}
-              height={1024}
-              sizes="220px"
-              className="h-20 w-auto object-contain"
-            />
+            <div className="relative h-20 w-44 overflow-hidden">
+              <Image
+                src={site.images.logo}
+                alt="Serenity Touch by Sandy logo"
+                fill
+                sizes="176px"
+                className="object-cover"
+              />
+            </div>
             <p className="mt-5 max-w-md leading-8 text-sage-900/72">
               {site.footerDescription}
             </p>
@@ -120,7 +124,7 @@ export function Footer() {
         <div className="flex flex-col gap-3 pt-7 text-sm text-sage-900/62 sm:flex-row sm:items-center sm:justify-between">
           <p>{`(c) ${year} Serenity Touch by Sandy. All rights reserved.`}</p>
           <p>
-            Built by{" "}
+            Built by{' '}
             <a
               className="font-semibold text-sage-800 transition hover:text-sage-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sage-700"
               href={site.cleopatra.url}

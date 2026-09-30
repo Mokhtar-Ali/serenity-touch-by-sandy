@@ -1,65 +1,65 @@
-import { Footer } from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
-import { AboutSection } from "@/components/sections/about";
-import { ContactSection } from "@/components/sections/contact";
-import { HeroSection } from "@/components/sections/hero";
-import { ServicesSection } from "@/components/sections/services";
-import { addOns, services } from "@/data/services";
-import { site } from "@/data/site";
+import { Footer } from '@/components/layout/footer';
+import { Navbar } from '@/components/layout/navbar';
+import { AboutSection } from '@/components/sections/about';
+import { ContactSection } from '@/components/sections/contact';
+import { HeroSection } from '@/components/sections/hero';
+import { ServicesSection } from '@/components/sections/services';
+import { addOns, services } from '@/data/services';
+import { site } from '@/data/site';
 
 const serviceOffers = [
   ...services.map((service) => ({
-    "@type": "Offer",
+    '@type': 'Offer',
     itemOffered: {
-      "@type": "Service",
+      '@type': 'Service',
       name: service.name,
       description: service.shortDescription,
-      provider: { "@id": `${site.url}/#business` },
+      provider: { '@id': `${site.url}/#business` },
       areaServed: site.location,
     },
     priceSpecification: service.prices.map((price) => ({
-      "@type": "UnitPriceSpecification",
+      '@type': 'UnitPriceSpecification',
       name: price.label,
       price: price.amount,
-      priceCurrency: "USD",
+      priceCurrency: 'USD',
     })),
   })),
   ...addOns.map((addOn) => ({
-    "@type": "Offer",
+    '@type': 'Offer',
     itemOffered: {
-      "@type": "Service",
+      '@type': 'Service',
       name: addOn.name,
       description: addOn.description,
-      provider: { "@id": `${site.url}/#business` },
+      provider: { '@id': `${site.url}/#business` },
       areaServed: site.location,
     },
     priceSpecification: {
-      "@type": "UnitPriceSpecification",
+      '@type': 'UnitPriceSpecification',
       price: addOn.amount,
-      priceCurrency: "USD",
+      priceCurrency: 'USD',
     },
   })),
 ];
 
 const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "MassageTherapist",
-  "@id": `${site.url}/#business`,
+  '@context': 'https://schema.org',
+  '@type': 'MassageTherapist',
+  '@id': `${site.url}/#business`,
   name: site.name,
   url: site.url,
   telephone: site.phone.e164,
   image: site.images.about,
   address: {
-    "@type": "PostalAddress",
-    addressLocality: "Florence",
-    addressRegion: "KY",
-    addressCountry: "US",
+    '@type': 'PostalAddress',
+    addressLocality: 'Florence',
+    addressRegion: 'KY',
+    addressCountry: 'US',
   },
   areaServed: {
-    "@type": "City",
-    name: "Florence",
-    addressRegion: "KY",
-    addressCountry: "US",
+    '@type': 'City',
+    name: 'Florence',
+    addressRegion: 'KY',
+    addressCountry: 'US',
   },
   sameAs: [site.instagram],
   makesOffer: serviceOffers,
@@ -71,7 +71,7 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
         }}
       />
       <Navbar />
