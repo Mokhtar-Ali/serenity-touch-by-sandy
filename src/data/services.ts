@@ -1,3 +1,5 @@
+import { site } from "@/data/site";
+
 export type ServicePrice = {
   label: string;
   price: string;
@@ -40,7 +42,7 @@ export const services: Service[] = [
       { label: "60 minutes", price: "$100", amount: 100 },
       { label: "90 minutes", price: "$140", amount: 140 },
     ],
-    image: "/images/relaxation-swedish-massage.jpg",
+    image: site.images.relaxation,
     imageAlt: "Sandy providing a relaxation massage in a softly lit room.",
     layout: "feature",
   },
@@ -59,7 +61,7 @@ export const services: Service[] = [
       { label: "60 minutes", price: "$100", amount: 100 },
       { label: "90 minutes", price: "$140", amount: 140 },
     ],
-    image: "/images/relaxation-swedish-massage.jpg",
+    image: site.images.relaxation,
     imageAlt: "Sandy providing an in-home massage treatment.",
     layout: "standard",
   },
@@ -79,7 +81,7 @@ export const services: Service[] = [
       { label: "60 minutes", price: "$130", amount: 130 },
       { label: "90 minutes", price: "$160", amount: 160 },
     ],
-    image: "/images/deep-tissue-massage.jpg",
+    image: site.images.deepTissue,
     imageAlt:
       "Sandy providing an in-home massage with hot stones placed on a client's back.",
     layout: "slim",
@@ -96,7 +98,7 @@ export const services: Service[] = [
     ],
     bestFor: "Great for quick relief and desk-related tension.",
     prices: [{ label: "30 minutes", price: "$70", amount: 70 }],
-    image: "/images/deep-tissue-massage.jpg",
+    image: site.images.deepTissue,
     imageAlt: "Sandy providing an upper-body massage in a home setting.",
     layout: "wide",
   },
@@ -112,7 +114,7 @@ export const services: Service[] = [
     ],
     bestFor: "Perfect for grounding, relaxation, and full-body wellness.",
     prices: [{ label: "30 minutes", price: "$70", amount: 70 }],
-    image: "/images/specialty-massage-services.jpg",
+    image: site.images.specialty,
     imageAlt: "Sandy holding a client's foot during a reflexology treatment.",
     layout: "wide",
   },

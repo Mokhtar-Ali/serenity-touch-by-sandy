@@ -35,7 +35,7 @@ export function AboutSection() {
           <div className="absolute -left-3 top-5 h-full w-full rounded-lg border border-sage-700/24 sm:-left-5" />
           <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-cream-400 shadow-[0_30px_70px_rgba(73,85,63,0.16)]">
             <Image
-              src={site.images.sandy}
+              src={site.images.about}
               alt="Sandy wearing green scrubs beside a prepared massage table."
               fill
               sizes="(max-width: 1024px) 92vw, 520px"

@@ -12,11 +12,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
       images: [
-        `${site.url}${site.images.hero}`,
-        `${site.url}${site.images.sandy}`,
-        `${site.url}/images/relaxation-swedish-massage.jpg`,
-        `${site.url}/images/deep-tissue-massage.jpg`,
-        `${site.url}/images/specialty-massage-services.jpg`,
+        site.images.hero,
+        site.images.relaxation,
+        site.images.deepTissue,
+        site.images.specialty,
+        site.images.about,
       ],
     },
   ];

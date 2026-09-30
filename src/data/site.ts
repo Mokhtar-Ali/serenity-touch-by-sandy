@@ -1,3 +1,6 @@
+const imageBucket =
+  "https://pub-ec6b76c0eef842d1bd7d65492c044988.r2.dev/Serenity%20Touch%20By%20Sandy";
+
 export const site = {
   name: "Serenity Touch by Sandy",
   displayName: "Serenity Touch",
@@ -23,9 +26,13 @@ export const site = {
       "https://cleopatrasolutions.com/?utm_source=serenity_touch&utm_medium=footer_cta&utm_campaign=website_design&utm_content=website_like_this",
   },
   images: {
-    logo: "/images/serenity-touch-logo.png",
-    hero: "/images/mobile-massage-setup.jpg",
-    sandy: "/images/sandy-serenity-touch.jpg",
+    logo: `${imageBucket}/Logo1.jpg`,
+    hero: `${imageBucket}/Hero.jpg`,
+    relaxation: `${imageBucket}/Massage.jpg`,
+    deepTissue: `${imageBucket}/Hot%20stones.jpg`,
+    specialty: `${imageBucket}/Foot.jpg`,
+    about: `${imageBucket}/About.jpg`,
+    icon: "/images/Logo1.jpg",
   },
   navigation: [
     { label: "About", href: "#about" },

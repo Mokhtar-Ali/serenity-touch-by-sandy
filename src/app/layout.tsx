@@ -51,8 +51,6 @@ export const metadata: Metadata = {
     images: [
       {
         url: site.images.hero,
-        width: 2048,
-        height: 1536,
         alt: "Massage table prepared with stones, towels, and massage oil for a mobile massage session.",
       },
     ],
@@ -65,8 +63,8 @@ export const metadata: Metadata = {
     images: [site.images.hero],
   },
   icons: {
-    icon: [{ url: "/icon.png", type: "image/png", sizes: "512x512" }],
-    apple: [{ url: "/apple-icon.png", type: "image/png", sizes: "180x180" }],
+    icon: site.images.icon,
+    apple: site.images.icon,
   },
 };
 
